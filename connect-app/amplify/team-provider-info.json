@@ -14,6 +14,12 @@
     "categories": {
       "auth": {
         "group13awsconnect91f8d8a4": {}
+      },
+      "api": {
+        "group13awsconnect": {}
+      },
+      "storage": {
+        "recordings": {}
       }
     }
   }

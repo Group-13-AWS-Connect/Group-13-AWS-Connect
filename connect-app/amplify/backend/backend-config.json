@@ -1,4 +1,24 @@
 {
+  "api": {
+    "group13awsconnect": {
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [],
+          "defaultAuthentication": {
+            "apiKeyConfig": {
+              "apiKeyExpirationDate": "2025-02-12T16:24:34.105Z",
+              "apiKeyExpirationDays": 365,
+              "description": "connect-app-graphql"
+            },
+            "authenticationType": "API_KEY"
+          }
+        }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
+    }
+  },
   "auth": {
     "group13awsconnect91f8d8a4": {
       "customAuth": false,
@@ -23,6 +43,13 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
+    }
+  },
+  "storage": {
+    "recordings": {
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "S3"
     }
   }
 }

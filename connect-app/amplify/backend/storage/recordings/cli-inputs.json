@@ -1,0 +1,12 @@
+{
+  "resourceName": "recordings",
+  "policyUUID": "725b5320",
+  "bucketName": "group13awsconnectbaae61aa308c4149968cc1be424402",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "READ"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
