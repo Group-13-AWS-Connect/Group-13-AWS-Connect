@@ -1,0 +1,7 @@
+# Group-13-AWS-Connect
+
+# Problem Statement
+Amazon Connect is a publicly available cloud contact center within AWS. Amazon Connect Supervisors currently lack the ability to view recordings of call center agent interactions with the customers of their businesses. This shortcoming can result in customer dissatisfaction, unmet compliance objectives, and inadequate training for new employees. Our project aims to develop a full-stack solution that allows for Contact Center Supervisors to search and browse Amazon Connect Agent Screen Recordings. Supervisors having access to these recordings can lead to an increase in quality of customer experience and improved training for new agents.
+
+# Product Description
+Our full-stack solution for Amazon Connect Agent Screen Recording is designed for simplicity and effectiveness. It uses secure authentication for user access and offers an easy-to-use interface for browsing, searching, and filtering recordings. Behind the scenes, it leverages AWS services like Containers, EC2, S3, Lambda, Dynamo DB, and Redshift to capture, align, and store recordings seamlessly. Plus, agents can easily control recordings through the embedded Contact Control Panel (CCP). Open-source and hosted on GitHub, it encourages collaboration and community contributions. Elevate your Contact Center's capabilities with our straightforward Amazon Connect Agent Screen Recording solution, perfect for compliance, training, and improved customer service.
