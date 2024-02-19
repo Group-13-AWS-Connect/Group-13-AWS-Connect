@@ -1,0 +1,51 @@
+/* navigation.css */
+@import "@aws-amplify/ui-react/styles.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&display=swap');
+
+.navigation-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: white; /* Set background color to white */
+    color: #555; /* Set text color to grey-ish */
+  }
+  
+  .logo img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .links-container {
+    display: flex;
+  }
+  
+  .links-container > div {
+    margin-right: 20px;
+  }
+  
+  .links-container a {
+    color: #555; /* Set link color to grey-ish */
+    text-decoration: none;
+  }
+  
+  .profilePic img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+  
+  .notificationIcon img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .navbar-spacing {
+    width: 20px; /* Adjust the width as required */
+  }
+  
+  .custom-navbar-bg {
+    background-color: white;
+  }
+  
+  
