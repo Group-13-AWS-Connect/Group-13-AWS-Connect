@@ -16,7 +16,13 @@
         "connectapp": {}
       },
       "auth": {
-        "connectappf3fd0e70": {}
+        "connectappf3fd0e70": {},
+        "connectapp": {
+          "userPoolId": "us-east-1_5mfD9vbx1",
+          "userPoolName": "employeesUpdated",
+          "webClientId": "16phk58nm04h2as63ksk71b0bi",
+          "nativeClientId": "16phk58nm04h2as63ksk71b0bi"
+        }
       }
     }
   }
