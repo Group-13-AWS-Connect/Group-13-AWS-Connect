@@ -4,7 +4,7 @@ export function Contact_Control_Panel() {
             <div id="container-div" style="width: 400px; height: 800px;"></div>
             <script type="text/javascript">
             var containerDiv = document.getElementById("container-div");
-            var instanceURL = "https://my-instance-domain.my.connect.aws/ccp-v2/";
+            var instanceURL = "https://bison-wireless.my.connect.aws";
             // initialize the streams api
             function init() {
                 // initialize the ccp
@@ -19,7 +19,7 @@ export function Contact_Control_Panel() {
                     top: 0,                       // optional, defaults to 0
                     left: 0                       // optional, defaults to 0
                 },
-                region: "eu-central-1",         // REQUIRED for `CHAT`, optional otherwise
+                region: "eu-east-1",         // REQUIRED for `CHAT`, optional otherwise
                 softphone: {                    // optional, defaults below apply if not provided
                     allowFramedSoftphone: true,   // optional, defaults to false
                     disableRingtone: false,       // optional, defaults to false
