@@ -2,82 +2,65 @@ import { useEffect, useState } from 'react';
 
 import { generateClient } from 'aws-amplify/api';
 
-import { createTodo } from './graphql/mutations';
-import { listTodos } from './graphql/queries';
 import { withAuthenticator, Button, Heading } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
+
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'
+import { SignIn } from './pages/sign-in'
+import { Contact_Control_Panel } from './pages/contact-control-panel'
 
 const initialState = { name: '', description: '' };
 const client = generateClient();
 
-const App = ({ signOut, user }) => {
-  const [formState, setFormState] = useState(initialState);
-  const [todos, setTodos] = useState([]);
+function App() {
+// const App = ({ signOut, user }) => {
+//   const [formState, setFormState] = useState(initialState);
+//   const [todos, setTodos] = useState([]);
 
-  useEffect(() => {
-    fetchTodos();
-  }, []);
+//   useEffect(() => {
+//     fetchTodos();
+//   }, []);
 
-  function setInput(key, value) {
-    setFormState({ ...formState, [key]: value });
-  }
+//   function setInput(key, value) {
+//     setFormState({ ...formState, [key]: value });
+//   }
 
-  async function fetchTodos() {
-    try {
-      const todoData = await client.graphql({
-        query: listTodos
-      });
-      const todos = todoData.data.listTodos.items;
-      setTodos(todos);
-    } catch (err) {
-      console.log('error fetching todos');
-    }
-  }
+//   async function fetchTodos() {
+//     try {
+//       const todoData = await client.graphql({
+//         query: listTodos
+//       });
+//       const todos = todoData.data.listTodos.items;
+//       setTodos(todos);
+//     } catch (err) {
+//       console.log('error fetching todos');
+//     }
+//   }
 
-  async function addTodo() {
-    try {
-      if (!formState.name || !formState.description) return;
-      const todo = { ...formState };
-      setTodos([...todos, todo]);
-      setFormState(initialState);
-      await client.graphql({
-        query: createTodo,
-        variables: {
-          input: todo
-        }
-      });
-    } catch (err) {
-      console.log('error creating todo:', err);
-    }
-  }
+//   async function addTodo() {
+//     try {
+//       if (!formState.name || !formState.description) return;
+//       const todo = { ...formState };
+//       setTodos([...todos, todo]);
+//       setFormState(initialState);
+//       await client.graphql({
+//         query: createTodo,
+//         variables: {
+//           input: todo
+//         }
+//       });
+//     } catch (err) {
+//       console.log('error creating todo:', err);
+//     }
+//   }
 
   return (
-    <div style={styles.container}>
-      <Heading level={1}>Hello {user.username}</Heading>
-      <Button onClick={signOut}>Sign out</Button>
-      <h2>Amplify Todos</h2>
-      <input
-        onChange={(event) => setInput('name', event.target.value)}
-        style={styles.input}
-        value={formState.name}
-        placeholder="Name"
-      />
-      <input
-        onChange={(event) => setInput('description', event.target.value)}
-        style={styles.input}
-        value={formState.description}
-        placeholder="Description"
-      />
-      <button style={styles.button} onClick={addTodo}>
-        Create Todo
-      </button>
-      {todos.map((todo, index) => (
-        <div key={todo.id ? todo.id : index} style={styles.todo}>
-          <p style={styles.todoName}>{todo.name}</p>
-          <p style={styles.todoDescription}>{todo.description}</p>
-        </div>
-      ))}
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<SignIn/>}/>
+        <Route path="/contact-control-panel" element={<Contact_Control_Panel/>}/>
+      </Routes>
+    </Router>
   );
 };
 
