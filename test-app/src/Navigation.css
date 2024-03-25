@@ -1,0 +1,183 @@
+/* navigation.css */
+@import "@aws-amplify/ui-react/styles.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&display=swap');
+
+
+.navbar {
+  background-color: white;
+  height: 80px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.nav-menu {
+  background-color: white;
+  width: 250px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 850ms;
+}
+
+.nav-menu.active {
+  left: 0;
+  transition: 350ms;
+}
+
+.nav-text {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 8px 0px 8px 16px;
+  list-style: none;
+  height: 60px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.nav-text:hover {
+  background-color: black;
+  cursor: pointer;
+}
+
+.nav-menu-items {
+  width: 100%;
+}
+
+.menu-bars {
+  margin-left: 2rem;
+  font-size: 2rem;
+  background: none;
+}
+
+.navbar-toggle {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.menu-bars {
+  margin-left: 2rem;
+  font-size: 2rem;
+  background: none;
+  color: #000;
+}
+
+.menu-bars:hover {
+  color: #808080; /* Grey color on hover */
+}
+
+
+
+.nav-menu-items li {
+  width: 100%;
+}
+
+.nav-menu-items li a {
+  display: flex;
+  color: black; /* Grey color for icons and text */
+  text-decoration: none;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.nav-menu-items li a svg {
+  fill: black; /* Set the fill color of the icons to black */
+}
+
+.nav-menu-items li a:hover {
+  background-color: white; /* Change background color on hover to white */
+  color: black; /* Change color of text on hover to black */
+}
+
+.nav-menu-items li a span {
+  margin-left: 8px; /* Adjust the margin to your preference */
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 250px; /* Adjust the width of the sidebar as needed */
+  justify-content: flex-start; /* Align sidebar to the far left */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .navigation-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: white; Set background color to white 
+    color: #555;  Set text color to grey-ish 
+  } */
+  
+  /* .logo img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .links-container {
+    display: flex;
+  }
+  
+  .links-container > div {
+    margin-right: 20px;
+  }
+   */
+  /* .links-container a {
+    color: #555; Set link color to grey-ish 
+    text-decoration: none;
+  }
+  
+  .profilePic img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+  
+  .notificationIcon img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .navbar-spacing {
+    width: 20px; Adjust the width as required 
+  }
+  
+  .custom-navbar-bg {
+    background-color: white;
+  }
+  
+   */
