@@ -13,6 +13,9 @@ export function Contact_Control_Panel() {
     return (
         <body onLoad="init()" style={"height:0px; width:0px;"}>
             <script type="text/javascript">
+            var containerDiv = document.getElementById("container-div");
+            var instanceURL = "https://my-instance-domain.my.connect.aws/ccp-v2/";
+            // initialize the streams api
             function init() {
                 // initialize the ccp
                 connect.core.initCCP(containerDiv, {
