@@ -1,11 +1,18 @@
+import "amazon-connect-streams"
+import React from "react";
+import '../App.css';
+
+
 export function Contact_Control_Panel() {
+    document.querySelectorAll('.container-div').forEach(e => {if (e.innnerHTML == '') {e.remove()}});
+    var containerDiv = document.createElement("div");
+    containerDiv.className = "container-div";
+    // containerDiv.style.cssText = "";
+    document.body.appendChild(containerDiv)
+    var instanceURL = "https://bison-wireless.my.connect.aws/ccp-v2/";
     return (
-        <body onload="init()">
-            <div id="container-div" style="width: 400px; height: 800px;"></div>
+        <body onLoad="init()" style={"height:0px; width:0px;"}>
             <script type="text/javascript">
-            var containerDiv = document.getElementById("container-div");
-            var instanceURL = "https://my-instance-domain.my.connect.aws/ccp-v2/";
-            // initialize the streams api
             function init() {
                 // initialize the ccp
                 connect.core.initCCP(containerDiv, {
@@ -19,7 +26,7 @@ export function Contact_Control_Panel() {
                     top: 0,                       // optional, defaults to 0
                     left: 0                       // optional, defaults to 0
                 },
-                region: "eu-central-1",         // REQUIRED for `CHAT`, optional otherwise
+                region: "eu-east-1",         // REQUIRED for `CHAT`, optional otherwise
                 softphone: {                    // optional, defaults below apply if not provided
                     allowFramedSoftphone: true,   // optional, defaults to false
                     disableRingtone: false,       // optional, defaults to false
@@ -37,7 +44,7 @@ export function Contact_Control_Panel() {
                 ccpSynTimeout: 3000, //optional, defaults to 1000 (ms)
                 ccpLoadTimeout: 10000 //optional, defaults to 5000 (ms)
                 })
-            }
+            };
             </script>
         </body>
     )

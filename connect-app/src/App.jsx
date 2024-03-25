@@ -8,6 +8,8 @@ import '@aws-amplify/ui-react/styles.css';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import { SignIn } from './pages/sign-in'
 import { Contact_Control_Panel } from './pages/contact-control-panel'
+import { Dashboard } from './pages/dashboard'
+
 
 const initialState = { name: '', description: '' };
 const client = generateClient();
@@ -54,45 +56,50 @@ function App() {
 //     }
 //   }
 
+
   return (
-    <Router>
+    <main className='App'>
+      <Router>
       <Routes>
         <Route path="/" element={<SignIn/>}/>
         <Route path="/contact-control-panel" element={<Contact_Control_Panel/>}/>
+        <Route path="/dashboard" element={<Dashboard/>}/>
       </Routes>
     </Router>
+    </main>
+    
   );
 };
 
-const styles = {
-  container: {
-    width: 400,
-    margin: '0 auto',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    padding: 20
-  },
-  todo: { marginBottom: 15 },
-  input: {
-    border: 'none',
-    backgroundColor: '#ddd',
-    marginBottom: 10,
-    padding: 8,
-    fontSize: 18
-  },
-  todoName: { fontSize: 20, fontWeight: 'bold' },
-  todoDescription: { marginBottom: 0 },
-  button: {
-    backgroundColor: 'black',
-    color: 'white',
-    outline: 'none',
-    fontSize: 18,
-    padding: '12px 0px'
-  }
-};
+// const styles = {
+//   container: {
+//     width: 400,
+//     margin: '0 auto',
+//     display: 'flex',
+//     flexDirection: 'column',
+//     justifyContent: 'center',
+//     padding: 20
+//   },
+//   todo: { marginBottom: 15 },
+//   input: {
+//     border: 'none',
+//     backgroundColor: '#ddd',
+//     marginBottom: 10,
+//     padding: 8,
+//     fontSize: 18
+//   },
+//   todoName: { fontSize: 20, fontWeight: 'bold' },
+//   todoDescription: { marginBottom: 0 },
+//   button: {
+//     backgroundColor: 'black',
+//     color: 'white',
+//     outline: 'none',
+//     fontSize: 18,
+//     padding: '12px 0px'
+//   }
+// };
 
-export default withAuthenticator(App);
+export default App;
 
 /* import { useState } from 'react'
 import reactLogo from './assets/react.svg'
