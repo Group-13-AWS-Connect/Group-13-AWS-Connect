@@ -9,6 +9,13 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import { SignIn } from './pages/sign-in'
 import { Contact_Control_Panel } from './pages/contact-control-panel'
 import { Dashboard } from './pages/dashboard'
+import { Amplify } from 'aws-amplify';
+
+
+
+import config from './amplifyconfiguration.json';
+
+Amplify.configure(config);
 
 
 const initialState = { name: '', description: '' };
@@ -99,7 +106,7 @@ function App() {
 //   }
 // };
 
-export default App;
+export default withAuthenticator(App);
 
 /* import { useState } from 'react'
 import reactLogo from './assets/react.svg'

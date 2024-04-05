@@ -22,6 +22,18 @@
           "userPoolName": "employeesUpdated",
           "webClientId": "16phk58nm04h2as63ksk71b0bi",
           "nativeClientId": "16phk58nm04h2as63ksk71b0bi"
+        },
+        "connectappcd6ed19a": {
+          "userPoolId": "us-east-1_5mfD9vbx1",
+          "userPoolName": "employeesUpdated",
+          "webClientId": "16phk58nm04h2as63ksk71b0bi",
+          "nativeClientId": "16phk58nm04h2as63ksk71b0bi"
+        }
+      },
+      "storage": {
+        "connectapp65bfd852": {
+          "bucketName": "bison-wireless-storage",
+          "region": "us-east-1"
         }
       }
     }

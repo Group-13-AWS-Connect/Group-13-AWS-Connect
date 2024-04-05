@@ -4,8 +4,6 @@
  * Any changes to this file will be overwritten when running amplify pull. *
  **************************************************************************/
 
-export { default as AgentCreateForm } from "./AgentCreateForm";
-export { default as AgentUpdateForm } from "./AgentUpdateForm";
-export { default as RecordingCreateForm } from "./RecordingCreateForm";
-export { default as RecordingUpdateForm } from "./RecordingUpdateForm";
+export { default as AgentInfoCreateForm } from "./AgentInfoCreateForm";
+export { default as AgentInfoUpdateForm } from "./AgentInfoUpdateForm";
 export { default as studioTheme } from "./studioTheme";

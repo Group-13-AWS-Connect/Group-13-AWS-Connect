@@ -1,4 +1,13 @@
-export function SignIn() {
+import { withAuthenticator, Button, Heading } from '@aws-amplify/ui-react';
+import { useState } from 'react';
+
+const initialState = { name: '', description: '' };
+
+export function SignIn({ signOut, user }) {
+  const [formState, setFormState] = useState(initialState);
+  function setInput(key, value) {
+    setFormState({ ...formState, [key]: value });
+  }
     return (       
     <div style={styles.container}>
     <Heading level={1}>Hello {user.username}</Heading>

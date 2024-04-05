@@ -7,7 +7,6 @@ export function Contact_Control_Panel() {
     document.querySelectorAll('.container-div').forEach(e => {if (e.innnerHTML == '') {e.remove()}});
     var containerDiv = document.createElement("div");
     containerDiv.className = "container-div";
-    // containerDiv.style.cssText = "";
     document.body.appendChild(containerDiv)
     var instanceURL = "https://bison-wireless.my.connect.aws/ccp-v2/";
     return (
