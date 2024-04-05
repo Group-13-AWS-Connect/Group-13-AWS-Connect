@@ -40,7 +40,7 @@ export default function App() {
       <a href="/dashboard" style={{ color: '#A3AED0' }}>Dashboard</a>
       </div>
       <div className ="sidebar-space">
-      <a href="#" style={{ color: '#A3AED0' }}>Profile</a>
+      <a href="/profile" style={{ color: '#A3AED0' }}>Profile</a>
       </div>
       <div className ="sidebar-space">
       <a href="#" style={{ color: '#A3AED0' }}>Queue</a>
