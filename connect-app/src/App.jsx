@@ -14,13 +14,23 @@ import { Amplify } from 'aws-amplify';
 
 
 import config from './amplifyconfiguration.json';
+import { list } from 'aws-amplify/storage';
+
+
 
 Amplify.configure(config);
 
 
 const initialState = { name: '', description: '' };
 const client = generateClient();
-
+try {
+  const result = await list({
+    prefix: 'recordings/'
+  });
+  console.log(result)
+} catch (error) {
+  console.log(error);
+}
 function App() {
 // const App = ({ signOut, user }) => {
 //   const [formState, setFormState] = useState(initialState);
