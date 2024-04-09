@@ -1,102 +1,129 @@
-import { MoreVertical, ChevronLast, ChevronFirst } from "lucide-react"
-import { useContext, createContext, useState } from "react"
+// import React from "react";
+import React, { useState } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
+import photo from "../assets/example_user2.jpg";
+import logo from "../assets/updated_bw_logo.jpg"
+// import { HouseSimple } from '@phosphor/react';
+import {HouseIcon} from "../assets/HouseIcon";
+import { HouseSimple, CaretDown, CaretLeft, User, Users, FileText, CalendarBlank, ChartBar, Gear, Info, SignOut, PlayCircle, Play, Headset, ClipboardText } from "@phosphor-icons/react";
+import './Sidebar.css';
 
-const SidebarContext = createContext()
 
-export default function Sidebar({ children }) {
-  const [expanded, setExpanded] = useState(true)
-  
-  return (
-    <aside className="h-screen">
-      <nav className="h-full flex flex-col bg-white border-r shadow-sm">
-        <div className="p-4 pb-2 flex justify-between items-center">
-          <img
-            src="https://img.logoipsum.com/243.svg"
-            className={`overflow-hidden transition-all ${
-              expanded ? "w-32" : "w-0"
-            }`}
-            alt=""
-          />
-          <button
-            onClick={() => setExpanded((curr) => !curr)}
-            className="p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100"
-          >
-            {expanded ? <ChevronFirst /> : <ChevronLast />}
-          </button>
-        </div>
+const Sidebar = () => {
+   
+    const { logout } = useAuth0();
 
-        <SidebarContext.Provider value={{ expanded }}>
-          <ul className="flex-1 px-3">{children}</ul>
-        </SidebarContext.Provider>
+    const handleLogout = () => {
+      logout({
+        logoutParams: {
+          returnTo: "/logout",
+        },
+      });
+    };
 
-        <div className="border-t flex p-3">
-          <img
-            src="https://ui-avatars.com/api/?background=c7d2fe&color=3730a3&bold=true"
-            alt=""
-            className="w-10 h-10 rounded-md"
-          />
-          <div
-            className={`
-              flex justify-between items-center
-              overflow-hidden transition-all ${expanded ? "w-52 ml-3" : "w-0"}
-          `}
-          >
-            <div className="leading-4">
-              <h4 className="font-semibold">John Doe</h4>
-              <span className="text-xs text-gray-600">johndoe@gmail.com</span>
+    return (
+
+        <div className="container">
+        <div className="sidebar">
+          {/* <div className="menu-btn">
+          <CaretLeft weight="bold" />
+            <i class="ph-bold ph-caret-left"></i>
+          </div> */}
+          <div className="head">
+            <img src ={logo}/>
+            {/* <div className="user-img">
+              <img src={photo} alt="" />
             </div>
-            <MoreVertical size={20} />
+            <div className="user-details">
+              <p className="title">web developer</p>
+              <p className="name">John Doe</p>
+            </div> */}
+          </div>
+          <div className="nav">
+            <div className="menu">
+              <p className="title">Main</p>
+              <ul>
+                <li>
+                  <a href="/dashboard">
+                    {/* <i class="icon ph-bold ph-house-simple"></i> */}
+                    <HouseSimple weight="bold" className="icon" />
+    
+                    <span className="text">Dashboard</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/queue">
+                    {/* <i class="icon ph-bold ph-house-simple"></i> */}
+                    <Headset weight="bold" className="icon" />
+    
+                    <span className="text">Queue</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/recordings">
+                    {/* <i class="icon ph-bold ph-house-simple"></i> */}
+                    <PlayCircle weight="bold" className="icon" />
+    
+                    <span className="text">Recordings</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/team">
+                    {/* <i class="icon ph-bold ph-house-simple"></i> */}
+                    <Users weight="bold" className="icon" />
+    
+                    <span className="text">Team Members</span>
+                  </a>
+                </li>
+                
+                <li>
+                  <a href="#">
+                    {/* <i class="icon ph-bold ph-calendar-blank"></i> */}
+                    <ClipboardText weight="bold" className="icon" />
+                    <span className="text">Feedback</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="menu">
+              <p className="title">Profile</p>
+              <ul>
+                <li>
+                  <a href="/profile">
+                    {/* <i class="icon ph-bold ph-gear"></i> */}
+                    <User weight="bold" className="icon" />
+                    <span className="text">Profile</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="menu">
+            <p className="title">Account</p>
+            <ul>
+              <li>
+                <a href="#">
+                  {/* <i class="icon ph-bold ph-info"></i> */}
+                  <Info weight="bold" className="icon" />
+                  <span className="text">Help</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  {/* <i class="icon ph-bold ph-sign-out"></i> */}
+                  <SignOut weight="bold" className="icon" />
+                  <span className="button__logout text" onClick={handleLogout}>Logout</span>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-      </nav>
-    </aside>
-  )
-}
+      </div>
 
-export function SidebarItem({ icon, text, active, alert }) {
-  const { expanded } = useContext(SidebarContext)
+
+
+    );
+  };
   
-  return (
-    <li
-      className={`
-        relative flex items-center py-2 px-3 my-1
-        font-medium rounded-md cursor-pointer
-        transition-colors group
-        ${
-          active
-            ? "bg-gradient-to-tr from-indigo-200 to-indigo-100 text-indigo-800"
-            : "hover:bg-indigo-50 text-gray-600"
-        }
-    `}
-    >
-      {icon}
-      <span
-        className={`overflow-hidden transition-all ${
-          expanded ? "w-52 ml-3" : "w-0"
-        }`}
-      >
-        {text}
-      </span>
-      {alert && (
-        <div
-          className={`absolute right-2 w-2 h-2 rounded bg-indigo-400 ${
-            expanded ? "" : "top-2"
-          }`}
-        />
-      )}
+  export default Sidebar;
 
-      {!expanded && (
-        <div
-          className={`
-          absolute left-full rounded-md px-2 py-1 ml-6
-          bg-indigo-100 text-indigo-800 text-sm
-          invisible opacity-20 -translate-x-3 transition-all
-          group-hover:visible group-hover:opacity-100 group-hover:translate-x-0
-      `}
-        >
-          {text}
-        </div>
-      )}
-    </li>
-  )
-}
