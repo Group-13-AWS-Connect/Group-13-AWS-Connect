@@ -1,0 +1,143 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Secular+One&display=swap');
+
+/* App.css */
+
+#root {
+  display: flex;
+  justify-content: flex-start; /* Align app to the top left */
+  align-items: flex-start; /* Align app to the top left */
+  margin-top: 20px; /* Add space between top edge of screen and app */
+  margin-left: 20px; /* Add space between left edge of screen and app */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the left */
+}
+
+.flashcards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Align cards to the left */
+}
+
+.row {
+  display: flex;
+}
+
+/* Style each card to have the same height and width */
+.flashcards-container > * {
+  flex: 1;
+  width: 300px; /* Set the width to 300px */
+  height: 300px; /* Set the height to 300px */
+  margin: 10px; /* Adjust spacing between cards */
+}
+
+.todo-card {
+  background-color: #f5f5f5; /* Light grey background color */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 12px; /* Padding inside the card */
+  margin-bottom: 8px; /* Bottom margin between cards */
+  display: flex; /* Flex layout for aligning items */
+  align-items: center; /* Align items vertically */
+}
+
+.todo-text {
+  flex-grow: 1; /* Allow text to grow and take up remaining space */
+}
+
+.todo-icons {
+  display: flex; /* Flex layout for aligning icons */
+  margin-left: 8px; /* Left margin between icons and text */
+}
+
+.todo-icons .icon {
+  cursor: pointer; /* Add cursor pointer on hover */
+  margin-right: 8px; /* Right margin between icons */
+}
+.todo-input::placeholder {
+  color: #e2e2e2;
+}
+
+.todo-button {
+  padding: 16px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  outline: none;
+  background: linear-gradient(
+    90deg,
+    rgba(93, 12, 255, 1) 0%,
+    rgba(155, 0, 250, 1) 100%
+  );
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.todo-form {
+  margin-bottom: 32px;
+}
+
+.todo-input {
+  padding: 14px 32px 14px 16px;
+  border-radius: 4px 0 0 4px;
+  border: 2px solid #5d0cff;
+  outline: none;
+  width: 320px;
+  background: transparent;
+  
+}
+/* App.css */
+
+.flashcards-container {
+  margin-top: 20px; /* Add top margin to the flashcards container */
+  flex: 1;
+  /* max-width: 500px;  */
+  margin: 10px; /* Adjust spacing between cards */
+}
+
+/* .flashcards-container .row {
+  margin-bottom: 20px; Add bottom margin to each row
+} */
+
+.flashcards-container .col {
+  margin-right: 20px; /* Add right margin to each column */
+}
+
+.flashcards-container .col:last-child {
+  margin-right: 0; /* Remove right margin from the last column */
+}
+
+.resources-card-cont{
+  padding-top: 56px;
+  margin-left: 80px;
+}
+
+.resources-card{
+  max-width: 300px;
+}
+
+.feedback-card-cont{
+  padding-top: 56px;
+  margin-left: 16px; 
+  
+}
+.todo-card-cont{
+  margin-left: 24px;
+  margin-top: 50px;
+}
+
+.card-text-title{
+  font-family: "Roboto";
+  font-weight: 700;
+
+}
+.card-text-subtitle{
+  font-family: "Roboto";
+  font-weight: 300;
+}
