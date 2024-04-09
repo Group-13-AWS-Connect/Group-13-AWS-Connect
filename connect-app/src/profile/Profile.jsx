@@ -1,5 +1,6 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import Sidebar from "../dashboard/Sidebar";
 
 const Profile = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
@@ -15,19 +16,7 @@ const Profile = () => {
       <div>
          <div className="">
       <div className ="sidebar-space">
-      <a href="/dashboard" style={{ color: '#A3AED0' }}>Dashboard</a>
-      </div>
-      <div className ="sidebar-space">
-      <a href="/profile" style={{ color: '#A3AED0' }}>Profile</a>
-      </div>
-      <div className ="sidebar-space">
-      <a href="#" style={{ color: '#A3AED0' }}>Queue</a>
-      </div>
-      <div className ="sidebar-space">
-      <a href="/recordings" style={{ color: '#A3AED0' }}>Recordings</a>
-      </div>
-      <div className ="sidebar-space">
-      <a href="/team" style={{ color: '#A3AED0' }}>Team Members</a>
+     <Sidebar/>
       </div>
       </div>
         <img src={user.picture} alt={user.name} />
