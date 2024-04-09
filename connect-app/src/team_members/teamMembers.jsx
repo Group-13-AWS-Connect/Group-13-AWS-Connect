@@ -12,6 +12,8 @@ import logo from '../assets/bw_main_logo.jpg';
 import {Button} from "@nextui-org/react";
 import {Link} from "@nextui-org/react";
 import {Divider} from "@nextui-org/react";
+import Sidebar from "../dashboard/Sidebar";
+import photo from "../assets/example_user2.jpg";
 
 export default function App() {
 
@@ -21,9 +23,9 @@ export default function App() {
       <Container fluid>
         <Row>
           <Col className = "sidebar-bg" md = "2" lg = "2">
-            <div className = "logo-container">
+            {/* <div className = "logo-container">
               <img className = "logo-style" src ={logo} alt="Bison Wireless Logo"/>
-            </div>
+            </div> */}
             {/* <div>
             <Link
         isExternal
@@ -42,21 +44,7 @@ export default function App() {
         Team Members
       </Link> */}
        <div className="">
-      <div className ="sidebar-space">
-      <a href="/dashboard" style={{ color: '#A3AED0' }}>Dashboard</a>
-      </div>
-      <div className ="sidebar-space">
-      <a href="/profile" style={{ color: '#A3AED0' }}>Profile</a>
-      </div>
-      <div className ="sidebar-space">
-      <a href="#" style={{ color: '#A3AED0' }}>Queue</a>
-      </div>
-      <div className ="sidebar-space">
-      <a href="/recordings" style={{ color: '#A3AED0' }}>Recordings</a>
-      </div>
-      <div className ="sidebar-space">
-      <a href="/team" style={{ color: '#A3AED0' }}>Team Members</a>
-      </div>
+      <Sidebar/>
       </div>
             </div>
           </Col>
@@ -64,23 +52,19 @@ export default function App() {
           <Row>
             <div className = "top-nav">
              
-             <div className = "begin-btn">
-             {/* <Button color="primary" variant="ghost">
-                Begin Working
-            </Button>  */}
-            {/* <Link
-              isExternal
-              href="https://github.com/nextui-org/nextui"
-              showAnchorIcon
-            >
-              Enter Queue
-          </Link> */}
-             </div>
               
               <div className = "user-button">
 
             
-
+              <div className="head">
+                <div className="user-img">
+                <img src={photo} alt="" />
+              </div>
+            <div className="user-details">
+              <p className="title">web developer</p>
+              <p className="name">John Doe</p>
+            </div>
+          </div>
                   {/* <User   
                     name="Jane Doe"
                     description="Agent"
@@ -88,14 +72,6 @@ export default function App() {
                   
                   /> */}
               </div> 
-              {/* <div className="flex h-5 items-center space-x-4 text-small">
-                <div>Enter Queue</div>
-                <Divider orientation="vertical" />
-                <div className="space-y-1">
-                <h4 className="text-medium font-medium">NextUI Components</h4>
-              </div>
-       
-              </div> */}
               
             </div>
           </Row>
