@@ -4,10 +4,11 @@ import App from './App.jsx'
 import Team from './team_members/teamMembers.jsx'
 import Login from './login/login-button.jsx'
 import Recordings from './recordings/Recordings.jsx'
-// import Sidebar from './dashboard/Sidebar.jsx'
+import Sidebar from './dashboard/Sidebar.jsx'
 import Dashboard from './dashboard/Dashboard.jsx'
 import Profile from './profile/Profile.jsx'
 // import Test from './testing.jsx'
+import Logout from './login/logout-page.jsx'
 import { Auth0ProviderWithNavigate } from "./login/auth0-provider-with-navigate.jsx";
 // import Nav from './Navbar.jsx'
 // import User from './userTable.jsx'
@@ -25,7 +26,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <Auth0ProviderWithNavigate>
     <NextUIProvider>
     <Routes>
+    <Route path="/logout" element={<Logout />} />
     <Route path="/profile" element={<Profile />} />
+    <Route path="/sidebar" element={<Sidebar />} />
     <Route path="/recordings" element={<Recordings />} />
     <Route path="/team" element={<Team />} />
     <Route path="/dashboard" element={<Dashboard />} />

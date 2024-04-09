@@ -14,6 +14,8 @@ import {Link} from "@nextui-org/react";
 import {Divider} from "@nextui-org/react";
 import {DownChev} from "../assets/downChevron";
 import { list } from 'aws-amplify/storage';
+import Sidebar from "../dashboard/Sidebar";
+import photo from "../assets/example_user2.jpg";
 
 try {
   const result = await list({
@@ -31,9 +33,9 @@ export default function App() {
       <Container fluid>
         <Row>
           <Col className = "sidebar-bg" md = "2" lg = "2">
-            <div className = "logo-container">
+            {/* <div className = "logo-container">
               <img className = "logo-style" src ={logo} alt="Bison Wireless Logo"/>
-            </div>
+            </div> */}
             {/* <div>
             <Link
         isExternal
@@ -52,26 +54,38 @@ export default function App() {
         Team Members
       </Link> */}
       <div className="">
-      <div className ="sidebar-space">
-      <a href="/dashboard" style={{ color: '#A3AED0' }}>Dashboard</a>
-      </div>
-      <div className ="sidebar-space">
-      <a href="/profile" style={{ color: '#A3AED0' }}>Profile</a>
-      </div>
-      <div className ="sidebar-space">
-      <a href="#" style={{ color: '#A3AED0' }}>Queue</a>
-      </div>
-      <div className ="sidebar-space">
-      <a href="/recordings" style={{ color: '#A3AED0' }}>Recordings</a>
-      </div>
-      <div className ="sidebar-space">
-      <a href="/team" style={{ color: '#A3AED0' }}>Team Members</a>
-      </div>
+      <Sidebar/>
       </div>
       
             </div>
           </Col>
           <Col className = "team-bg" md = "10" lg = "10">
+          <Row>
+            <div className = "top-nav">
+             
+              
+              <div className = "user-button">
+
+            
+              <div className="head">
+                <div className="user-img">
+                <img src={photo} alt="" />
+              </div>
+            <div className="user-details">
+              <p className="title">web developer</p>
+              <p className="name">John Doe</p>
+            </div>
+          </div>
+                  {/* <User   
+                    name="Jane Doe"
+                    description="Agent"
+                    src={{profile}}
+                  
+                  /> */}
+              </div> 
+              
+            </div>
+          </Row>
           <Row>
             <div className = "top-nav">
              
