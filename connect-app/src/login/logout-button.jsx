@@ -7,14 +7,14 @@ export const LogoutButton = () => {
   const handleLogout = () => {
     logout({
       logoutParams: {
-        returnTo: "/test",
+        returnTo: "/logout",
       },
     });
   };
 
   return (
     <div className = "logout-btn">
-    <button className=" button__logout" onClick={handleLogout}>
+    <button className="button__logout" onClick={handleLogout}>
       Log Out
     </button>
     </div>
