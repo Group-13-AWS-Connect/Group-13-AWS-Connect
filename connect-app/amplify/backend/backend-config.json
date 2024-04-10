@@ -23,6 +23,24 @@
     }
   },
   "auth": {},
+  "parameters": {
+    "AMPLIFY_storage_connectapp65bfd852_bucketName": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "connectapp65bfd852"
+        }
+      ]
+    },
+    "AMPLIFY_storage_connectapp65bfd852_region": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "connectapp65bfd852"
+        }
+      ]
+    }
+  },
   "storage": {
     "connectapp65bfd852": {
       "dependsOn": [],

@@ -18,6 +18,12 @@
       "auth": {
         "connectappf3fd0e70": {},
         "connectapp": {}
+      },
+      "storage": {
+        "connectapp65bfd852": {
+          "bucketName": "bison-wireless-storage",
+          "region": "us-east-1"
+        }
       }
     }
   }
