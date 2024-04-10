@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import photo from "../assets/example_user2.jpg";
-import logo from "../assets/updated_bw_logo.jpg"
+import logo from "../assets/bw_logo_dark.svg";
 // import { HouseSimple } from '@phosphor/react';
 import {HouseIcon} from "../assets/HouseIcon";
 import { HouseSimple, CaretDown, CaretLeft, User, Users, FileText, CalendarBlank, ChartBar, Gear, Info, SignOut, PlayCircle, Play, Headset, ClipboardText } from "@phosphor-icons/react";
