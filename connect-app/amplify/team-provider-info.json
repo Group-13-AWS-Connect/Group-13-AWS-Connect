@@ -26,9 +26,7 @@
         }
       },
       "function": {
-        "connectappsecrets": {
-          "secretsPathAmplifyAppId": "d2euc8bee1fepy"
-        }
+        "connectappsecrets": {}
       }
     }
   }
