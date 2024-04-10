@@ -75,7 +75,7 @@ for (let i = 0; i < ids.length; i++) {
   
   employees.push(curr_employee);
 }
-console.log(employees);
+// console.log(employees);
 
 const columns = [
   {name: "ID", uid: "id", sortable: true},

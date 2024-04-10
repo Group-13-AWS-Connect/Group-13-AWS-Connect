@@ -18,6 +18,19 @@ const input = { // ListObjectsRequest
 
 const command = new ListObjectsCommand(input);
 const response = await client.send(command);
+
+const input_other_bucket = { // ListObjectsRequest
+  Bucket: "bison-wireless-storage",
+  Delimiter: "/",
+  Prefix: "ContactRecords2024/04/05/10/",
+};
+
+const command_other_bucket = new ListObjectsCommand(input_other_bucket);
+const response_other_bucket = await client.send(command_other_bucket);
+
+var response_new = {...response.Contents,...response_other_bucket.Contents};
+console.log(response_new)
+
 var recordings_list = [];
 
 for (let i = 0; i < response.Contents.length; i++){
@@ -76,6 +89,7 @@ for (let i = 0; i < response.Contents.length; i++){
     transcript: 'https://bison-wireless-storage.s3.amazonaws.com/Analysis/Voice/2024/04/05/' + contact_record.ContactId + "_analysis_" + contact_record.Queue.DequeueTimestamp + ".json",
   }
 
+  console.log(contact_record.Recordings[0].Location.slice(60,72))
   recordings_list.push(curr_recording);
 
 }
