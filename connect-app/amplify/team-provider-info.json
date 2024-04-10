@@ -24,6 +24,11 @@
           "bucketName": "bison-wireless-storage",
           "region": "us-east-1"
         }
+      },
+      "function": {
+        "connectappsecrets": {
+          "secretsPathAmplifyAppId": "d2euc8bee1fepy"
+        }
       }
     }
   }

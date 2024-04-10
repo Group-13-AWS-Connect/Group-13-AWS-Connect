@@ -5,8 +5,8 @@ import { ConnectClient, ListUsersCommand, ListAgentStatusesCommand, GetCurrentUs
 const connect_client = new ConnectClient({
   region: 'us-east-1',
   credentials: {
-    accessKeyId: import.meta.env.VITE_AWS_ACCESS_KEY_ID,
-    secretAccessKey: import.meta.env.VITE_AWS_SECRET_ACCESS_KEY
+    accessKeyId: `${import.meta.env.VITE_AWS_ACCESS_KEY_ID}N`,
+    secretAccessKey: `${import.meta.env.VITE_AWS_SECRET_ACCESS_KEY}x`
   }
 });
 const connect_input = { 
