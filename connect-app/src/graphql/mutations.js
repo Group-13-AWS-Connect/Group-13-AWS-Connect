@@ -1,102 +1,45 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createRecording = /* GraphQL */ `
-  mutation CreateRecording(
-    $input: CreateRecordingInput!
-    $condition: ModelRecordingConditionInput
+export const createTodo = /* GraphQL */ `
+  mutation CreateTodo(
+    $input: CreateTodoInput!
+    $condition: ModelTodoConditionInput
   ) {
-    createRecording(input: $input, condition: $condition) {
-      agent_id
-      name
-      transcript
-      video
-      tags
+    createTodo(input: $input, condition: $condition) {
       id
+      name
+      description
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const updateRecording = /* GraphQL */ `
-  mutation UpdateRecording(
-    $input: UpdateRecordingInput!
-    $condition: ModelRecordingConditionInput
+export const updateTodo = /* GraphQL */ `
+  mutation UpdateTodo(
+    $input: UpdateTodoInput!
+    $condition: ModelTodoConditionInput
   ) {
-    updateRecording(input: $input, condition: $condition) {
-      agent_id
-      name
-      transcript
-      video
-      tags
+    updateTodo(input: $input, condition: $condition) {
       id
+      name
+      description
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const deleteRecording = /* GraphQL */ `
-  mutation DeleteRecording(
-    $input: DeleteRecordingInput!
-    $condition: ModelRecordingConditionInput
+export const deleteTodo = /* GraphQL */ `
+  mutation DeleteTodo(
+    $input: DeleteTodoInput!
+    $condition: ModelTodoConditionInput
   ) {
-    deleteRecording(input: $input, condition: $condition) {
-      agent_id
-      name
-      transcript
-      video
-      tags
+    deleteTodo(input: $input, condition: $condition) {
       id
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const createAgent = /* GraphQL */ `
-  mutation CreateAgent(
-    $input: CreateAgentInput!
-    $condition: ModelAgentConditionInput
-  ) {
-    createAgent(input: $input, condition: $condition) {
-      agent_id
       name
-      status
-      id
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const updateAgent = /* GraphQL */ `
-  mutation UpdateAgent(
-    $input: UpdateAgentInput!
-    $condition: ModelAgentConditionInput
-  ) {
-    updateAgent(input: $input, condition: $condition) {
-      agent_id
-      name
-      status
-      id
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const deleteAgent = /* GraphQL */ `
-  mutation DeleteAgent(
-    $input: DeleteAgentInput!
-    $condition: ModelAgentConditionInput
-  ) {
-    deleteAgent(input: $input, condition: $condition) {
-      agent_id
-      name
-      status
-      id
+      description
       createdAt
       updatedAt
       __typename
