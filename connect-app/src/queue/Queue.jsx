@@ -1,7 +1,6 @@
 import "amazon-connect-streams"
 import React from "react";
 import './Queue.css';
-import Sidebar from "../dashboard/Sidebar";
 
 
 export default function Queue() {
