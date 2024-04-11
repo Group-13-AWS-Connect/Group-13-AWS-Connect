@@ -18,13 +18,36 @@ import {NextUIProvider} from '@nextui-org/react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@aws-amplify/ui-react/styles.css';
 import './index.css'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
+import { Auth0Provider, withAuthenticationRequired } from '@auth0/auth0-react';
 
+const ProtectedRoute = ({ component, ...args }) => {
+  const Component = withAuthenticationRequired(component, args);
+  return <Component />;
+};
+
+const Auth0ProviderWithRedirectCallback = ({ children, ...props }) => {
+  const navigate = useNavigate();
+  const onRedirectCallback = (appState) => {
+    navigate((appState && appState.returnTo) || window.location.pathname);
+  };
+  return (
+    <Auth0Provider onRedirectCallback={onRedirectCallback} {...props}>
+      {children}
+    </Auth0Provider>
+  );
+};
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Router>
   <React.StrictMode>
-  <Auth0ProviderWithNavigate>
+  <Auth0ProviderWithRedirectCallback
+    domain={import.meta.env.VITE_AUTH0_DOMAIN}
+    clientId={import.meta.env.VITE_AUTH0_CLIENT_ID}
+    authorizationParams={{
+      redirect_uri: window.location.origin,
+    }}
+  >
     <NextUIProvider>
     <Routes>
     <Route path="/logout" element={<Logout />} />
@@ -34,10 +57,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Route path="/team" element={<Team />} />
     <Route path="/dashboard" element={<Dashboard />} />
     <Route path="/queue" element={<Queue />} />
-    <Route path="/" element={<Login />} />
+    <Route path="/" element={<ProtectedRoute component={<Dashboard />}/>} />
     </Routes>
     </NextUIProvider>
-    </Auth0ProviderWithNavigate>,
+    </Auth0ProviderWithRedirectCallback>,
   </React.StrictMode>,
   </Router>
 )
