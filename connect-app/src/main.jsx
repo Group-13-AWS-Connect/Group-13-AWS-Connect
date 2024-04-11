@@ -10,7 +10,7 @@ import Dashboard from './dashboard/Dashboard.jsx'
 import Profile from './profile/Profile.jsx'
 // import Test from './testing.jsx'
 import Logout from './login/logout-page.jsx'
-import { Auth0ProviderWithNavigate } from "./login/auth0-provider-with-navigate.jsx";
+// import { Auth0ProviderWithNavigate } from "./login/auth0-provider-with-navigate.jsx";
 // import Nav from './Navbar.jsx'
 // import User from './userTable.jsx'
 // import NavbarItem from './Navbar.jsx'
@@ -57,7 +57,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Route path="/team" element={<Team />} />
     <Route path="/dashboard" element={<Dashboard />} />
     <Route path="/queue" element={<Queue />} />
-    <Route path="/" element={<ProtectedRoute component={<Dashboard />}/>} />
+    <Route path="/" element={<ProtectedRoute component={ Dashboard }/>} />
     </Routes>
     </NextUIProvider>
     </Auth0ProviderWithRedirectCallback>,
