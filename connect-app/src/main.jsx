@@ -57,7 +57,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Route path="/team" element={<Team />} />
     <Route path="/dashboard" element={<Dashboard />} />
     <Route path="/queue" element={<Queue />} />
-    <Route path="/" element={<ProtectedRoute component={ Dashboard }/>} />
+    <Route path="/" element={<ProtectedRoute component={<Dashboard />}/>} />
     </Routes>
     </NextUIProvider>
     </Auth0ProviderWithRedirectCallback>,
