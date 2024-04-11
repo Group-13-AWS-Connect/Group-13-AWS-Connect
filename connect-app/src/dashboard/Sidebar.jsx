@@ -44,7 +44,7 @@ const Sidebar = () => {
               <p className="title">Main</p>
               <ul>
                 <li>
-                  <a href="/dashboard">
+                  <a href="#/dashboard">
                     {/* <i class="icon ph-bold ph-house-simple"></i> */}
                     <HouseSimple weight="bold" className="icon" />
     
@@ -52,7 +52,7 @@ const Sidebar = () => {
                   </a>
                 </li>
                 <li>
-                  <a target="_blank" href="/queue">
+                  <a target="_blank" href="#/queue">
                     {/* <i class="icon ph-bold ph-house-simple"></i> */}
                     <Headset weight="bold" className="icon" />
     
@@ -60,7 +60,7 @@ const Sidebar = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="/recordings">
+                  <a href="#/recordings">
                     {/* <i class="icon ph-bold ph-house-simple"></i> */}
                     <PlayCircle weight="bold" className="icon" />
     
@@ -68,7 +68,7 @@ const Sidebar = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="/team">
+                  <a href="#/team">
                     {/* <i class="icon ph-bold ph-house-simple"></i> */}
                     <Users weight="bold" className="icon" />
     
@@ -89,7 +89,7 @@ const Sidebar = () => {
               <p className="title">Profile</p>
               <ul>
                 <li>
-                  <a href="/profile">
+                  <a href="#/profile">
                     {/* <i class="icon ph-bold ph-gear"></i> */}
                     <User weight="bold" className="icon" />
                     <span className="text">Profile</span>
