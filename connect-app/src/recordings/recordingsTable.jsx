@@ -22,6 +22,7 @@ import {VerticalDotsIcon} from "../assets/VerticalDotsIcon";
 import {SearchIcon} from "../assets/SearchIcon";
 import {ChevronDownIcon} from "../assets/ChevronDownIcon";
 import {columns, users, statusOptions} from "./recordingsData";
+import {recordings_list} from "./newRecordings";
 import {capitalize} from "../utils";
 import {EyeIcon} from "../assets/EyeIcon";
 import {DocIcon} from "../assets/DocIcon";
@@ -122,24 +123,17 @@ export default function TeamMembers() {
         return (
           // Add the dowload button here
           <div className="relative flex items-center gap-2">
-            <Tooltip content="View Screen Recording">
-            <Link target= "_blank" href={user.screen_recording}>
+            <Tooltip content="View">
+            <Link href="/records">
               <span className="text-lg text-default-400 cursor-pointer active:opacity-50">
                 <EyeIcon />
               </span>
               </Link>
             </Tooltip>
-            <Tooltip color="primary" content="View Transcript">
-            <Link target= "_blank" href={user.transcript}>
+            <Tooltip color="primary" content="Download Transcript">
+            <Link href="https://s3.amazonaws.com/bison-wireless-storage/recordings/file.txt">
               <span className="text-lg text-primary cursor-pointer active:opacity-50">
                 <DocIcon />
-              </span>
-              </Link>
-            </Tooltip>
-            <Tooltip content="View Audio">
-            <Link target= "_blank" href={user.audio_file}>
-              <span className="text-lg text-default-400 cursor-pointer active:opacity-50">
-                <EyeIcon />
               </span>
               </Link>
             </Tooltip>

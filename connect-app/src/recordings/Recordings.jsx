@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Pagination, getKeyValue} from "@nextui-org/react";
 import {User} from "@nextui-org/react";
 // import {users} from "../data";
@@ -16,34 +16,34 @@ import {DownChev} from "../assets/downChevron";
 import { list } from 'aws-amplify/storage';
 import Sidebar from "../dashboard/Sidebar";
 import photo from "../assets/example_user2.jpg";
+import VideoPlayer from "./videoPlayer";
+import { useAuth0 } from "@auth0/auth0-react";
+
+
+
+try {
+  const result = await list({
+    prefix: 'recordings/'
+  });
+  console.log(result)
+} catch (error) {
+  console.log(error);
+}
 
 export default function App() {
 
+  const [showVideoPlayer, setShowVideoPlayer] = useState(false);
+  const toggleComponent = () => setShowVideoPlayer(!showVideoPlayer);
+  const { user, isAuthenticated, isLoading } = useAuth0();
+  const rolenamespace = "https://role.example.com/";
+
   return (
+    isAuthenticated && (
     <div>
       <Container fluid>
         <Row>
           <Col className = "sidebar-bg" md = "2" lg = "2">
-            {/* <div className = "logo-container">
-              <img className = "logo-style" src ={logo} alt="Bison Wireless Logo"/>
-            </div> */}
-            {/* <div>
-            <Link
-        isExternal
-        href="/dashboard"
-        showAnchorIcon
-      >
-        Dashboard
-      </Link>
-            </div> */}
             <div>
-            {/* <Link
-        isExternal
-        href="/team"
-        showAnchorIcon
-      >
-        Team Members
-      </Link> */}
       <div className="">
       <Sidebar/>
       </div>
@@ -51,73 +51,6 @@ export default function App() {
             </div>
           </Col>
           <Col className = "team-bg" md = "10" lg = "10">
-          <Row>
-            <div className = "top-nav">
-             
-              
-              <div className = "user-button">
-
-            
-              <div className="head">
-                <div className="user-img">
-                <img src={photo} alt="" />
-              </div>
-            <div className="user-details">
-              <p className="title">web developer</p>
-              <p className="name">John Doe</p>
-            </div>
-          </div>
-                  {/* <User   
-                    name="Jane Doe"
-                    description="Agent"
-                    src={{profile}}
-                  
-                  /> */}
-              </div> 
-              
-            </div>
-          </Row>
-          <Row>
-            <div className = "top-nav">
-             
-             <div className = "begin-btn">
-             {/* <Button color="primary" variant="ghost">
-                Begin Working
-            </Button>  */}
-            {/* <Link
-              isExternal
-              href="https://github.com/nextui-org/nextui"
-              showAnchorIcon
-            >
-              Enter Queue
-          </Link> */}
-             </div>
-              
-              <div className = "user-button">
-
-            
-{/* 
-                  <User   
-                    name="Jane Doe"
-                    description="Agent"
-                    src={{profile}}
-                  
-                  />  */}
-              </div>
-              {/* <span className="text-lg  cursor-pointer">
-                <DownChev />
-              </span> */}
-              {/* <div className="flex h-5 items-center space-x-4 text-small">
-                <div>Enter Queue</div>
-                <Divider orientation="vertical" />
-                <div className="space-y-1">
-                <h4 className="text-medium font-medium">NextUI Components</h4>
-              </div>
-       
-              </div> */}
-              
-            </div>
-          </Row>
           <Row>
             <div className = "team-heading">
               Recordings
@@ -132,7 +65,6 @@ export default function App() {
             <div className = "team-table">
             <Recordings />
             </div>
-            {/* <img src={profile}/> */}
       
           <div>
             
@@ -142,6 +74,7 @@ export default function App() {
         </Row>
         </Container>
     </div>
+    )
 
   );
 }
