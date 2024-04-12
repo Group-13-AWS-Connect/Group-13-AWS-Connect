@@ -22,7 +22,8 @@ import {call_review} from "./recordingsData";
 
 export default function App() {
   const { user, isAuthenticated } = useAuth0();
-  const searchParams = new URLSearchParams(window.location.search);
+  const searchParams = new URLSearchParams(window.location.href);
+  console.log(window.location.href);
   const contact_id = searchParams.get('contact_id');
   console.log(contact_id);
   var curr_recording = call_review[contact_id];
