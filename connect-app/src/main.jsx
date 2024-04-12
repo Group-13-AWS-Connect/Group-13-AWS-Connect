@@ -8,6 +8,7 @@ import Recordings from './recordings/Recordings.jsx'
 import Sidebar from './dashboard/Sidebar.jsx'
 import Dashboard from './dashboard/Dashboard.jsx'
 import Profile from './profile/Profile.jsx'
+import CallReview from './recordings/callReview.jsx'
 // import Test from './testing.jsx'
 import Logout from './login/logout-page.jsx'
 import { Auth0ProviderWithNavigate } from "./login/auth0-provider-with-navigate.jsx";
@@ -27,6 +28,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <Auth0ProviderWithNavigate>
     <NextUIProvider>
     <Routes>
+    <Route path="/records" element={<CallReview />} />
     <Route path="/logout" element={<Logout />} />
     <Route path="/profile" element={<Profile />} />
     <Route path="/sidebar" element={<Sidebar />} />
