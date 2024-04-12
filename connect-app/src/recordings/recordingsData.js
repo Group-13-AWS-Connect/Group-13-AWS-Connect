@@ -32,6 +32,7 @@ const response_other_bucket = await client.send(command_other_bucket);
 // console.log(response_new)
 
 var recordings_list = [];
+var call_review_json = {};
 
 for (let i = 0; i < response.Contents.length; i++){
   var file_location = 'https://bison-wireless-storage.s3.amazonaws.com/' + response.Contents[i].Key;
@@ -84,12 +85,15 @@ for (let i = 0; i < response.Contents.length; i++){
     full_date: date_fixed,
     time: convo_length,
     screen_recording: 'https://bison-wireless-storage.s3.amazonaws.com' + contact_record.Recordings[1].Location.slice(22),
+    contact_id: contact_record.ContactId,
     audio_file: 'https://bison-wireless-storage.s3.amazonaws.com/Analysis/Voice/Redacted' + contact_record.Recordings[0].Location.slice(60,72) + contact_record.ContactId + "_call_recording_redacted_" + contact_record.Queue.DequeueTimestamp + ".wav",
     transcript: 'https://bison-wireless-storage.s3.amazonaws.com/Analysis/Voice/Redacted' + contact_record.Recordings[0].Location.slice(60,72) + contact_record.ContactId + "_analysis_redacted_" + contact_record.Queue.DequeueTimestamp + ".json",
   }
 
-  console.log(contact_record.Recordings[0].Location.slice(60,72))
+  // console.log(contact_record.Recordings[0].Location.slice(60,72))
   recordings_list.push(curr_recording);
+  call_review_json[contact_record.ContactId] = curr_recording;
+
 
 }
 
@@ -110,6 +114,7 @@ const statusOptions = [
 
 // console.log(recordings_list);
 const users = recordings_list;
+const call_review = call_review_json;
 // [
 //   {
 //     name: "Tony Reichert",
@@ -253,4 +258,4 @@ const users = recordings_list;
 //   },
 // ];
 
-export {columns, users, statusOptions};
+export {columns, users, statusOptions, call_review};

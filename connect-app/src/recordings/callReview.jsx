@@ -18,10 +18,12 @@ import {Card, CardBody} from "@nextui-org/react";
 import { useAuth0 } from "@auth0/auth0-react";
 // import { User} from "@phosphor-icons/react";
 import { CaretLeft } from "@phosphor-icons/react";
-
+import {call_review} from "./recordingsData";
 
 export default function App() {
   const { user, isAuthenticated } = useAuth0();
+  const searchParams = new URLSearchParams(window.location.search);
+  console.log(searchParams);
   const givennamespace = "https://givenname.example.com/";
   const familynamespace = "https://familyname.example.com/";
   const usernamespace = "https://username.example.com/";
@@ -29,7 +31,7 @@ export default function App() {
   const namespace = "https://empid.example.com/";
 
   const handleCaretClick = () => {
-    navigate('/recordings'); 
+    navigate('#/recordings'); 
   };
 
   return (
