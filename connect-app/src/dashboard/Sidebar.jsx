@@ -16,7 +16,7 @@ const Sidebar = () => {
     const handleLogout = () => {
       logout({
         logoutParams: {
-          returnTo: "/logout",
+          returnTo: "#/logout",
         },
       });
     };
@@ -44,7 +44,7 @@ const Sidebar = () => {
               <p className="title">Main</p>
               <ul>
                 <li>
-                  <a href="/dashboard">
+                  <a href="#/dashboard">
                     {/* <i class="icon ph-bold ph-house-simple"></i> */}
                     <HouseSimple weight="bold" className="icon" />
     
@@ -52,13 +52,13 @@ const Sidebar = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="/profile">
+                  <a href="#/profile">
                     <User weight="bold" className="icon" />
                     <span className="text">My Profile</span>
                   </a>
                 </li>
                 <li>
-                  <a href="/queue">
+                  <a href="#/queue">
                     {/* <i class="icon ph-bold ph-house-simple"></i> */}
                     <Headset weight="bold" className="icon" />
     
@@ -66,7 +66,7 @@ const Sidebar = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="/recordings">
+                  <a href="#/recordings">
                     {/* <i class="icon ph-bold ph-house-simple"></i> */}
                     <PlayCircle weight="bold" className="icon" />
     
@@ -74,7 +74,7 @@ const Sidebar = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="/team">
+                  <a href="#/team">
                     {/* <i class="icon ph-bold ph-house-simple"></i> */}
                     <Users weight="bold" className="icon" />
     

@@ -30,7 +30,7 @@ export default function App() {
 
   const { user, isAuthenticated, isLoading } = useAuth0();
 
-  const namespace = "https://myapp.example.com/";
+  const givennamespace = "https://givenname.example.com/";
 
   return (
     isAuthenticated && (
@@ -49,7 +49,7 @@ export default function App() {
             </div>
           </Col>
           <Col className = "team-bg" md = "10" lg = "10">
-          <Row>
+          {/* <Row>
             <div className = "top-nav">
              
               
@@ -65,19 +65,19 @@ export default function App() {
               <p className="name">John Doe</p>
             </div>
           </div>
-                  {/* <User   
+                  <User   
                     name="Jane Doe"
                     description="Agent"
                     src={{profile}}
                   
-                  /> */}
+                  />
               </div> 
               
             </div>
-          </Row>
+          </Row> */}
           <Row className="custom-gutter">
             <div className = "team-heading">
-            <p>Welcome {user[`${namespace}given_name`]},</p>
+            <p>Welcome {user[`${givennamespace}given_name`]},</p>
             </div>
             <div className = "team-subheading">
             <p>{todaysDate()}</p>
