@@ -82,7 +82,7 @@ for (let i = 0; i < response.Contents.length; i++){
     name: `${connect_response.User.IdentityInfo.FirstName} ${connect_response.User.IdentityInfo.LastName}`,
     id: contact_record.Agent.Username,
     date: String(date_fixed).slice(0, 15),
-    full_date: String(date_fixed),
+    full_date: date_fixed.toString(),
     time: convo_length,
     screen_recording: 'https://bison-wireless-storage.s3.amazonaws.com' + contact_record.Recordings[1].Location.slice(22),
     contact_id: contact_record.ContactId,
