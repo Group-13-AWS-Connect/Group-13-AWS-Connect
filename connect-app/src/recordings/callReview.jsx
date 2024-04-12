@@ -106,7 +106,7 @@ export default function App() {
         <p className = "profile-subehading font-semibold text-default-400" >Name</p>
         <p className = "profile-info">{curr_recording.name}</p>
             
-        <p className = "profile-subehading font-semibold text-default-400" >Employee ID</p>
+        <p className = "profile-subehading font-semibold text-default-400" >Username</p>
         <p className = "profile-info">{curr_recording.id}</p>
       </div>
 
