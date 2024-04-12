@@ -114,7 +114,7 @@ for (let i = 0; i < response_other_bucket.Contents.length; i++){
     return data;
   });
 
-  var conversation_duration = await fetch('https://bison-wireless-storage.s3.amazonaws.com/Analysis/Voice/2024/04/05/' + contact_record.ContactId + "_analysis_" + contact_record.Queue.DequeueTimestamp + ".json")
+  var conversation_duration = await fetch('https://bison-wireless-storage.s3.amazonaws.com/Analysis/Voice/2024/04/12/' + contact_record.ContactId + "_analysis_" + contact_record.Queue.DequeueTimestamp + ".json")
   .then ((response) => response.json())
   .then (data => {
     return data.ConversationCharacteristics.TotalConversationDurationMillis;
