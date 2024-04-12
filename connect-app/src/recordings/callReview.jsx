@@ -23,7 +23,9 @@ import {call_review} from "./recordingsData";
 export default function App() {
   const { user, isAuthenticated } = useAuth0();
   const searchParams = new URLSearchParams(window.location.search);
-  console.log(searchParams);
+  const contact_id = searchParams.get('contact_id');
+  console.log(contact_id);
+  var curr_recording = call_review[contact_id];
   const givennamespace = "https://givenname.example.com/";
   const familynamespace = "https://familyname.example.com/";
   const usernamespace = "https://username.example.com/";
@@ -74,7 +76,7 @@ export default function App() {
         <Row>
         <div className = "video-cont" style={{ maxWidth: '1000px'}}>
       <video controls style={{ width: '100%' }}>
-      <source src="https://newvideoplayertest.s3.amazonaws.com/ex_screen_recording2.mp4" type="video/mp4" />
+      <source src={curr_recording.screen_recording} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       </div>
@@ -101,30 +103,30 @@ export default function App() {
         <Col md = "3" lg = "3">
         <div className = "video-details" style={{ marginTop: '10px' }}>
         <p className = "profile-subehading font-semibold text-default-400" >Name</p>
-        <p className = "profile-info">Rachel Reese</p>
+        <p className = "profile-info">{curr_recording.name}</p>
             
         <p className = "profile-subehading font-semibold text-default-400" >Employee ID</p>
-        <p className = "profile-info">BW071477</p>
+        <p className = "profile-info">{curr_recording.id}</p>
       </div>
 
         </Col>
         <Col md = "3" lg = "3">
         <div className = "video-details" style={{ marginTop: '10px' }}>
         <p className = "profile-subehading font-semibold text-default-400" >Date of Call</p>
-        <p className = "profile-info">April 1, 2024</p>
+        <p className = "profile-info">{curr_recording.full_date}</p>
             
         <p className = "profile-subehading font-semibold text-default-400" >Length of Call</p>
-        <p className = "profile-info">2 Minutes 5 Seconds</p>
+        <p className = "profile-info">{curr_recording.time}</p>
       </div>
 
         </Col>
         <Col md = "3" lg = "3">
         <div className = "video-details" style={{ marginTop: '10px' }}>
         <p className = "profile-subehading font-semibold text-default-400" >Recording</p>
-        <p className = "profile-info"><Link isExternal href="https://github.com/nextui-org/nextui">Download </Link></p>
+        <p className = "profile-info"><Link isExternal href={curr_recording.screen_recording}>Download </Link></p>
             
         <p className = "profile-subehading font-semibold text-default-400" >Transcript</p>
-        <p className = "profile-info"><Link isExternal href="https://github.com/nextui-org/nextui">View </Link></p>
+        <p className = "profile-info"><Link isExternal href={curr_recording.transcript}>View </Link></p>
       </div>
 
         </Col>
