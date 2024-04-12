@@ -34,7 +34,7 @@ const response = await client.send(command);
 var recordings_list = [];
 var call_review_json = {};
 
-for (let i = 0; i < response.Contents.length; i++){
+for (let i = 0; i < response.Contents[i].length; i++){
   var file_location = 'https://bison-wireless-storage.s3.amazonaws.com/' + response.Contents[i].Key;
   var contact_record = await fetch(file_location)
   .then ((response) => response.json())
@@ -106,7 +106,7 @@ const input_other_bucket = { // ListObjectsRequest
 const command_other_bucket = new ListObjectsCommand(input_other_bucket);
 const response_other_bucket = await client.send(command_other_bucket);
 
-for (let i = 0; i < response_other_bucket.Contents.length; i++){
+for (let i = 0; i < response_other_bucket.Contents[i].length; i++){
   var file_location = 'https://bison-wireless-storage.s3.amazonaws.com/' + response_other_bucket.Contents[i].Key;
   var contact_record = await fetch(file_location)
   .then ((response) => response.json())
