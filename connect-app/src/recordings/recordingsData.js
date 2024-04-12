@@ -100,7 +100,7 @@ for (let i = 0; i < response.Contents.length; i++){
 const input_other_bucket = { // ListObjectsRequest
   Bucket: "bison-wireless-storage",
   Delimiter: "/",
-  Prefix: "ContactRecords2024/04/05/12/",
+  Prefix: "ContactRecords2024/04/12/07/",
 };
 
 const command_other_bucket = new ListObjectsCommand(input_other_bucket);
