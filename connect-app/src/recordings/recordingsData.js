@@ -28,14 +28,14 @@ const input_other_bucket = { // ListObjectsRequest
 const command_other_bucket = new ListObjectsCommand(input_other_bucket);
 const response_other_bucket = await client.send(command_other_bucket);
 
-// var response_new = {...response.Contents,...response_other_bucket.Contents};
+var response_new = {...response.Contents,...response_other_bucket.Contents};
 // console.log(response_new)
 
 var recordings_list = [];
 var call_review_json = {};
 
-for (let i = 0; i < response.Contents.length; i++){
-  var file_location = 'https://bison-wireless-storage.s3.amazonaws.com/' + response.Contents[i].Key;
+for (let i = 0; i < response_new.length; i++){
+  var file_location = 'https://bison-wireless-storage.s3.amazonaws.com/' + response_new[i].Key;
   var contact_record = await fetch(file_location)
   .then ((response) => response.json())
   .then (data => {
