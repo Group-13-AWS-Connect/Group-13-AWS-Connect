@@ -163,8 +163,8 @@ for (let i = 0; i < response_other_bucket.Contents.length; i++){
   }
 
   // console.log(contact_record.Recordings[0].Location.slice(60,72))
-  recordings_list.push(curr_recording);
-  call_review_json[contact_record.ContactId] = curr_recording;
+  recordings_list.push(curr_recording2);
+  call_review_json[contact_record.ContactId] = curr_recording2;
 
 
 }
