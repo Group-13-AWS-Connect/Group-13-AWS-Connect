@@ -25,7 +25,7 @@ export default function App() {
   const searchParams = window.location.href.split('/');
 //   console.log(window.location.href);
   const contact_id = searchParams[4].slice(19);
-  console.log(contact_id);
+  console.log(call_review);
   var curr_recording = call_review[0][contact_id];
   const givennamespace = "https://givenname.example.com/";
   const familynamespace = "https://familyname.example.com/";
