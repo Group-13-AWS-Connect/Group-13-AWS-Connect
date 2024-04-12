@@ -37,6 +37,7 @@ body {
   /* max-height: 80px; new */
   /* max-width: 170px;
   max-height: 100px; */
+  justify-content: center;
   border-bottom: 1px solid #f6f6f6;
 }
 .user-img {
@@ -61,7 +62,7 @@ body {
   font-size: 14px;
   font-weight: 500;
 }
-.nav {
+.sidebar-nav {
   flex: 1;
 }
 .menu ul li {
