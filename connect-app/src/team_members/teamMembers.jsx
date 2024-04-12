@@ -49,7 +49,7 @@ export default function App() {
             </div>
           </Col>
           <Col className = "team-bg" md = "10" lg = "10">
-          <Row>
+          {/* <Row>
             <div className = "top-nav">
              
               
@@ -65,16 +65,16 @@ export default function App() {
               <p className="name">John Doe</p>
             </div>
           </div>
-                  {/* <User   
+                  <User   
                     name="Jane Doe"
                     description="Agent"
                     src={{profile}}
                   
-                  /> */}
+                  />
               </div> 
               
             </div>
-          </Row>
+          </Row> */}
           <Row>
             <div className = "team-heading">
               Team Members
@@ -101,4 +101,3 @@ export default function App() {
 
   );
 }
-
