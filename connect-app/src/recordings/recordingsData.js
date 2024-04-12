@@ -34,7 +34,7 @@ const response = await client.send(command);
 var recordings_list = [];
 var call_review_json = {};
 
-for (let i = 0; i < response.Contents[i].length; i++){
+for (let i = 0; i < response.Contents.length; i++){
   var file_location = 'https://bison-wireless-storage.s3.amazonaws.com/' + response.Contents[i].Key;
   var contact_record = await fetch(file_location)
   .then ((response) => response.json())
@@ -106,7 +106,7 @@ const input_other_bucket = { // ListObjectsRequest
 const command_other_bucket = new ListObjectsCommand(input_other_bucket);
 const response_other_bucket = await client.send(command_other_bucket);
 
-for (let i = 0; i < response_other_bucket.Contents[i].length; i++){
+for (let i = 0; i < response_other_bucket.Contents.length; i++){
   var file_location = 'https://bison-wireless-storage.s3.amazonaws.com/' + response_other_bucket.Contents[i].Key;
   var contact_record = await fetch(file_location)
   .then ((response) => response.json())
@@ -130,28 +130,28 @@ for (let i = 0; i < response_other_bucket.Contents[i].length; i++){
   user_id = user_id.split("/");
   user_id = user_id[(user_id.length - 1)];
 
-  const connect_client = new ConnectClient({
+  const connect_client2 = new ConnectClient({
     region: 'us-east-1',
     credentials: {
       accessKeyId: `${import.meta.env.VITE_AWS_ACCESS_KEY_ID}N`,
       secretAccessKey: `${import.meta.env.VITE_AWS_SECRET_ACCESS_KEY}x`
     }
   });
-  const connect_input = { 
+  const connect_input2 = { 
     InstanceId: "4d9f7918-6f2c-45a1-a403-27493400fc91",
     UserId: user_id
   };
   
   
-  const connect_command = new DescribeUserCommand(connect_input);
-  const connect_response = await connect_client.send(connect_command);
+  const connect_command2 = new DescribeUserCommand(connect_input2);
+  const connect_response2 = await connect_client2.send(connect_command2);
   
   // console.log(connect_response);
   var date = Date.parse(contact_record.InitiationTimestamp)
   var date_fixed = new Date(date)
 
-  var curr_recording = {
-    name: `${connect_response.User.IdentityInfo.FirstName} ${connect_response.User.IdentityInfo.LastName}`,
+  var curr_recording2 = {
+    name: `${connect_response2.User.IdentityInfo.FirstName} ${connect_response2.User.IdentityInfo.LastName}`,
     id: contact_record.Agent.Username,
     date: String(date_fixed).slice(0, 15),
     full_date: date_fixed.toString(),
