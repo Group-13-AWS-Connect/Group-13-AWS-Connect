@@ -11,10 +11,6 @@ export default function Queue() {
     var instanceURL = "https://bison-wireless.my.connect.aws/ccp-v2/";
     return (
         <body onLoad="init()" style={"height:0px; width:0px;"}>
-            <div className="new-sidebar">
-     
-                <Sidebar/>
-            </div>
             <script type="text/javascript">
            
             function init() {
