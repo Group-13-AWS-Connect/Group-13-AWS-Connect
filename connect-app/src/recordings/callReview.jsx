@@ -22,9 +22,9 @@ import {call_review} from "./recordingsData";
 
 export default function App() {
   const { user, isAuthenticated } = useAuth0();
-  const searchParams = new URLSearchParams(window.location.href);
-  console.log(window.location.href);
-  const contact_id = searchParams.get('contact_id');
+  const searchParams = window.location.href.split('/');
+//   console.log(window.location.href);
+  const contact_id = searchParams[4].slice(19);
   console.log(contact_id);
   var curr_recording = call_review[contact_id];
   const givennamespace = "https://givenname.example.com/";
