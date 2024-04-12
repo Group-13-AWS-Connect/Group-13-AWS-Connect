@@ -16,7 +16,7 @@ import {DownChev} from "../assets/downChevron";
 import { list } from 'aws-amplify/storage';
 import Sidebar from "../dashboard/Sidebar";
 import photo from "../assets/example_user2.jpg";
-import VideoPlayer from "./videoPlayer";
+// import VideoPlayer from "./videoPlayer";
 import { useAuth0 } from "@auth0/auth0-react";
 
 

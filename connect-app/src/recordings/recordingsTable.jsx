@@ -22,7 +22,7 @@ import {VerticalDotsIcon} from "../assets/VerticalDotsIcon";
 import {SearchIcon} from "../assets/SearchIcon";
 import {ChevronDownIcon} from "../assets/ChevronDownIcon";
 import {columns, users, statusOptions} from "./recordingsData";
-import {recordings_list} from "./newRecordings";
+// import {recordings_list} from "./newRecordings";
 import {capitalize} from "../utils";
 import {EyeIcon} from "../assets/EyeIcon";
 import {DocIcon} from "../assets/DocIcon";

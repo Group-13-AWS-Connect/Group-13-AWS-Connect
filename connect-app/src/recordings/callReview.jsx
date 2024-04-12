@@ -5,18 +5,18 @@ import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Paginat
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import profile from '../assets/example_user2.jpg';
-import logo from '../assets/bw_main_logo.jpg';
+// import profile from '../assets/example_user2.jpg';
+// import logo from '../assets/bw_main_logo.jpg';
 // import { Link } from 'react-router-dom';
 import {Button} from "@nextui-org/react";
 import {Link} from "@nextui-org/react";
 import {Divider} from "@nextui-org/react";
 import Sidebar from "../dashboard/Sidebar";
 import {Input} from "@nextui-org/react";
-import photo from "../assets/example_user2.jpg";
+// import photo from "../assets/example_user2.jpg";
 import {Card, CardBody} from "@nextui-org/react";
 import { useAuth0 } from "@auth0/auth0-react";
-import { User} from "@phosphor-icons/react";
+// import { User} from "@phosphor-icons/react";
 import { CaretLeft } from "@phosphor-icons/react";
 
 
