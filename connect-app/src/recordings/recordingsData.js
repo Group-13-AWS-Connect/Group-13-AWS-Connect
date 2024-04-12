@@ -114,7 +114,7 @@ const statusOptions = [
 
 // console.log(recordings_list);
 const users = recordings_list;
-const call_review = call_review_json;
+const call_review = [call_review_json];
 // [
 //   {
 //     name: "Tony Reichert",
