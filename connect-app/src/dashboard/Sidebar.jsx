@@ -58,7 +58,7 @@ const Sidebar = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="#/queue">
+                  <a target="_blank" href="#/queue">
                     {/* <i class="icon ph-bold ph-house-simple"></i> */}
                     <Headset weight="bold" className="icon" />
     
