@@ -29,7 +29,7 @@ const command_other_bucket = new ListObjectsCommand(input_other_bucket);
 const response_other_bucket = await client.send(command_other_bucket);
 
 var response_new = {...response.Contents,...response_other_bucket.Contents};
-// console.log(response_new)
+console.log(response_new)
 
 var recordings_list = [];
 var call_review_json = {};
